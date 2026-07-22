@@ -5,30 +5,28 @@ Full training pipeline for PinoyBot:
   1. Load the annotated master CSV
   2. Extract features for every token (grouped by sentence, so context
      features have real neighbors to look at)
-  3. Split into train / validation / test by SENTENCE (not by individual
-     token -- splitting by token would leak neighboring words from the
-     same sentence across splits and make evaluation look better than it
-     really is), following the 70-15-15 split required by the spec
-  4. Vectorize features with DictVectorizer
-  5. Train two candidate models (Decision Tree, Naive Bayes) as the spec
-     suggests, and compare them on the validation set
-  6. Report final metrics on the untouched test set
-  7. Save the trained model + vectorizer to disk for pinoybot.py to load
+  3. Split into train / validation / test by SENTENCE (70-15-15 split)
+  4. Oversample minority classes (CS, ENG) in the training set to resolve
+     severe class imbalance natively through machine learning
+  5. Vectorize features with DictVectorizer
+  6. Train two candidate models (Decision Tree, Naive Bayes) and compare 
+     them on the validation set using Macro-F1 score
+  7. Report final metrics on the untouched test set
+  8. Save the trained model + vectorizer to disk for pinoybot.py to load
 
-Run with:  python3 train_model.py path/to/master_annotated.csv
+Run with:  python3 train_model.py master_annotated_FINAL.csv
 """
 
 import sys
 import pickle
 import random
-from collections import defaultdict
+from collections import defaultdict, Counter
 
 import pandas as pd
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import classification_report, accuracy_score, f1_score
-from sklearn.utils.class_weight import compute_sample_weight
 
 from features import featurize_tokens
 
@@ -81,6 +79,39 @@ def build_dataset(sentences, sentence_id_subset):
     return X, y
 
 
+def oversample_training_set(X_dicts, y_labels):
+    """
+    Random Oversampling: Duplicates minority class tokens (CS, ENG, OTH) in the 
+    training set so that all classes match the majority class (FIL) count.
+    
+    This fixes the class imbalance purely through dataset resampling, avoiding
+    any prohibited hard-coded logic in pinoybot.py.
+    """
+    rng = random.Random(RANDOM_SEED)
+    counts = Counter(y_labels)
+    max_count = max(counts.values())
+
+    # Group feature dict indices by class label
+    class_indices = defaultdict(list)
+    for idx, label in enumerate(y_labels):
+        class_indices[label].append(idx)
+
+    resampled_X, resampled_y = [], []
+    for label, indices in class_indices.items():
+        # Draw samples with replacement up to the majority count
+        sampled_indices = rng.choices(indices, k=max_count)
+        for idx in sampled_indices:
+            resampled_X.append(X_dicts[idx])
+            resampled_y.append(y_labels[idx])
+
+    # Shuffle the resampled training set
+    combined = list(zip(resampled_X, resampled_y))
+    rng.shuffle(combined)
+    shuffled_X, shuffled_y = zip(*combined)
+    
+    return list(shuffled_X), list(shuffled_y)
+
+
 def main(csv_path):
     print(f"Loading {csv_path} ...")
     sentences = load_and_group(csv_path)
@@ -95,6 +126,12 @@ def main(csv_path):
     X_val_dicts, y_val = build_dataset(sentences, val_ids)
     X_test_dicts, y_test = build_dataset(sentences, test_ids)
 
+    print(f"Original Training Distribution: {Counter(y_train)}")
+    
+    # Apply Random Oversampling on training data ONLY (Validation and Test stay real)
+    X_train_dicts, y_train = oversample_training_set(X_train_dicts, y_train)
+    print(f"Resampled Training Distribution: {Counter(y_train)}\n")
+
     print(f"Tokens -> train: {len(y_train)}, val: {len(y_val)}, test: {len(y_test)}\n")
 
     print("Vectorizing features...")
@@ -106,32 +143,21 @@ def main(csv_path):
 
     candidates = {
         'DecisionTree': DecisionTreeClassifier(
-            random_state=RANDOM_SEED, class_weight='balanced', max_depth=30
+            random_state=RANDOM_SEED, max_depth=None
         ),
         'MultinomialNB': MultinomialNB(),
     }
-
-    # MultinomialNB has no class_weight parameter, so we balance it manually
-    # via sample_weight instead -- otherwise it heavily favors FIL (the
-    # majority class) and essentially never predicts CS (the rarest class).
-    sample_weight = compute_sample_weight('balanced', y_train)
 
     print("=" * 60)
     print("VALIDATION RESULTS (used to pick the better model)")
     print("=" * 60)
     val_scores = {}
     for name, clf in candidates.items():
-        if name == 'MultinomialNB':
-            clf.fit(X_train, y_train, sample_weight=sample_weight)
-        else:
-            clf.fit(X_train, y_train)
+        clf.fit(X_train, y_train)
         preds = clf.predict(X_val)
         acc = accuracy_score(y_val, preds)
         macro_f1 = f1_score(y_val, preds, average='macro', zero_division=0)
-        # Selecting by macro-F1, not raw accuracy: accuracy is dominated by
-        # the FIL majority class and can look great even if a model never
-        # catches CS at all. Macro-F1 weighs every class equally, so it
-        # actually reflects how well the rare classes are being handled.
+        
         val_scores[name] = macro_f1
         print(f"\n--- {name} ---")
         print(f"Overall accuracy: {acc:.4f}  |  Macro F1: {macro_f1:.4f}")
