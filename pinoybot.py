@@ -16,7 +16,7 @@ import os
 import pickle
 from typing import List
 
-from features import featurize_tokens
+from features import extract_passage_features
 
 # Files are loaded relative to this script's location so tag_language()
 # works correctly even if imported from another directory.
@@ -43,13 +43,13 @@ def tag_language(tokens: List[str]) -> List[str]:
     if not tokens:
         return []
 
-    # 1. Extract features from the input tokens using features.py
-    feature_dicts = featurize_tokens(tokens, verbose=True)
+    # 1. Extract pure word-level features from input tokens
+    feature_dicts = extract_passage_features(tokens)
 
-    # 2. Vectorize the features into the feature matrix format expected by the model
+    # 2. Vectorize features into the 8,161-column matrix expected by the model
     X = _VECTORIZER.transform(feature_dicts)
 
-    # 3. Pure Machine Learning Prediction: Model directly outputs the predicted tags
+    # 3. Predict language tags using the trained Decision Tree model
     predicted = _MODEL.predict(X)
 
     # 4. Return predictions as a list of strings
@@ -57,7 +57,17 @@ def tag_language(tokens: List[str]) -> List[str]:
 
 
 if __name__ == "__main__":
-    example_tokens = ["nag-eat", "magboxing", "HAHAHA", "hahaha", "si", "Bogart", "sa", "may", "EDSA", "."]
+    example_tokens = [
+        "magnificent", "magic", "nagging",
+        # Suffix Traps
+       # "human", "ocean", "brain", "train", 
+        # Infix Traps
+       # "number", "plumber", "dinosaur", "window", 
+        # Hyphen Traps
+      #  "co-op", "t-shirt", "x-ray", "e-mail", 
+        # True Homographs
+      #  "ate", "noon", "raw", "may"
+    ]
     print("Tokens:", example_tokens)
     tags = tag_language(example_tokens)
     print("Tags:  ", tags)
