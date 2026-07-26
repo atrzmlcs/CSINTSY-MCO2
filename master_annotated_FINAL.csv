@@ -1470,7 +1470,6 @@ word_id,sentence_id,sentence,word,tag
 1469,82,"Naiyak ako doon sa sinabi ng tatay na "" Anak , ""  at "" I love you . """,Anak,FIL
 1470,82,"Naiyak ako doon sa sinabi ng tatay na "" Anak , ""  at "" I love you . """,",",OTH
 1471,82,"Naiyak ako doon sa sinabi ng tatay na "" Anak , ""  at "" I love you . ""","""",OTH
-1472,82,"Naiyak ako doon sa sinabi ng tatay na "" Anak , ""  at "" I love you . """,,OTH
 1473,82,"Naiyak ako doon sa sinabi ng tatay na "" Anak , ""  at "" I love you . """,at,FIL
 1474,82,"Naiyak ako doon sa sinabi ng tatay na "" Anak , ""  at "" I love you . ""","""",OTH
 1475,82,"Naiyak ako doon sa sinabi ng tatay na "" Anak , ""  at "" I love you . """,I,ENG
@@ -1478,7 +1477,6 @@ word_id,sentence_id,sentence,word,tag
 1477,82,"Naiyak ako doon sa sinabi ng tatay na "" Anak , ""  at "" I love you . """,you,ENG
 1478,82,"Naiyak ako doon sa sinabi ng tatay na "" Anak , ""  at "" I love you . """,.,OTH
 1479,82,"Naiyak ako doon sa sinabi ng tatay na "" Anak , ""  at "" I love you . ""","""",OTH
-1480,82,"Naiyak ako doon sa sinabi ng tatay na "" Anak , ""  at "" I love you . """,,OTH
 1481,83,Sa sobrang pag titipid ng gobyerno ayan buhay ng mga sundalo natin ang naka taya .,Sa,FIL
 1482,83,Sa sobrang pag titipid ng gobyerno ayan buhay ng mga sundalo natin ang naka taya .,sobrang,FIL
 1483,83,Sa sobrang pag titipid ng gobyerno ayan buhay ng mga sundalo natin ang naka taya .,pag,FIL
@@ -1928,7 +1926,6 @@ word_id,sentence_id,sentence,word,tag
 1927,108,HELP HAHAHSHA di na nga ako sumasali or nakikinig dahil gumagawa pa kami ng group activity jdjdjd,activity,ENG
 1928,108,HELP HAHAHSHA di na nga ako sumasali or nakikinig dahil gumagawa pa kami ng group activity jdjdjd,jdjdjd,OTH
 1929,110,"""  Inay , maghahanap po ako bukas ng trabaho .","""",OTH
-1930,110,"""  Inay , maghahanap po ako bukas ng trabaho .",,OTH
 1931,110,"""  Inay , maghahanap po ako bukas ng trabaho .",Inay,FIL
 1932,110,"""  Inay , maghahanap po ako bukas ng trabaho .",",",OTH
 1933,110,"""  Inay , maghahanap po ako bukas ng trabaho .",maghahanap,FIL
@@ -3103,7 +3100,6 @@ word_id,sentence_id,sentence,word,tag
 3102,171,"Sabihin mo : "" Kaya hindi ba kayo mangingilag magkasala ? """,magkasala,FIL
 3103,171,"Sabihin mo : "" Kaya hindi ba kayo mangingilag magkasala ? """,?,OTH
 3104,171,"Sabihin mo : "" Kaya hindi ba kayo mangingilag magkasala ? ""","""",OTH
-3105,171,"Sabihin mo : "" Kaya hindi ba kayo mangingilag magkasala ? """,,OTH
 3106,172,Mas bilang pa nila kesa sa akin kung ilang years na akong nagsstay sa UP lol .,Mas,FIL
 3107,172,Mas bilang pa nila kesa sa akin kung ilang years na akong nagsstay sa UP lol .,bilang,FIL
 3108,172,Mas bilang pa nila kesa sa akin kung ilang years na akong nagsstay sa UP lol .,pa,FIL
@@ -3333,7 +3329,7 @@ word_id,sentence_id,sentence,word,tag
 3332,189,"Kahit sa susunod na bigayan , hindi rin sigurado .",rin,FIL
 3333,189,"Kahit sa susunod na bigayan , hindi rin sigurado .",sigurado,FIL
 3334,189,"Kahit sa susunod na bigayan , hindi rin sigurado .",.,OTH
-3335,190,6:47 yung hindi na kaya ng jr mo bumangun HAHAHAHAHA,06:47:00,OTH
+3335,190,6:47 yung hindi na kaya ng jr mo bumangun HAHAHAHAHA,6:47:00,OTH
 3336,190,6:47 yung hindi na kaya ng jr mo bumangun HAHAHAHAHA,yung,FIL
 3337,190,6:47 yung hindi na kaya ng jr mo bumangun HAHAHAHAHA,hindi,FIL
 3338,190,6:47 yung hindi na kaya ng jr mo bumangun HAHAHAHAHA,na,FIL
@@ -6417,7 +6413,6 @@ word_id,sentence_id,sentence,word,tag
 6416,379,"Gusto Niya nakagawa ka pa ng mabuti . """,mabuti,FIL
 6417,379,"Gusto Niya nakagawa ka pa ng mabuti . """,.,OTH
 6418,379,"Gusto Niya nakagawa ka pa ng mabuti . ""","""",OTH
-6419,379,"Gusto Niya nakagawa ka pa ng mabuti . """,,OTH
 6420,380,Hanggang sa maayos na nila ang kontrata at in-scheduled na rin ang implant procedure nitong October .,Hanggang,FIL
 6421,380,Hanggang sa maayos na nila ang kontrata at in-scheduled na rin ang implant procedure nitong October .,sa,FIL
 6422,380,Hanggang sa maayos na nila ang kontrata at in-scheduled na rin ang implant procedure nitong October .,maayos,FIL
@@ -7659,7 +7654,6 @@ word_id,sentence_id,sentence,word,tag
 7658,476,"Ang naturang halaman na tila "" one-night "" only kung magtanghal ay tinatawag na "" Queen of the Night , ""  dahil sa gabi lang siya namumukadkad at isang beses lang mangyari sa isang taon .",Night,ENG
 7659,476,"Ang naturang halaman na tila "" one-night "" only kung magtanghal ay tinatawag na "" Queen of the Night , ""  dahil sa gabi lang siya namumukadkad at isang beses lang mangyari sa isang taon .",",",OTH
 7660,476,"Ang naturang halaman na tila "" one-night "" only kung magtanghal ay tinatawag na "" Queen of the Night , ""  dahil sa gabi lang siya namumukadkad at isang beses lang mangyari sa isang taon .","""",OTH
-7661,476,"Ang naturang halaman na tila "" one-night "" only kung magtanghal ay tinatawag na "" Queen of the Night , ""  dahil sa gabi lang siya namumukadkad at isang beses lang mangyari sa isang taon .",,OTH
 7662,476,"Ang naturang halaman na tila "" one-night "" only kung magtanghal ay tinatawag na "" Queen of the Night , ""  dahil sa gabi lang siya namumukadkad at isang beses lang mangyari sa isang taon .",dahil,FIL
 7663,476,"Ang naturang halaman na tila "" one-night "" only kung magtanghal ay tinatawag na "" Queen of the Night , ""  dahil sa gabi lang siya namumukadkad at isang beses lang mangyari sa isang taon .",sa,FIL
 7664,476,"Ang naturang halaman na tila "" one-night "" only kung magtanghal ay tinatawag na "" Queen of the Night , ""  dahil sa gabi lang siya namumukadkad at isang beses lang mangyari sa isang taon .",gabi,FIL
@@ -8145,7 +8139,6 @@ word_id,sentence_id,sentence,word,tag
 8144,510,Kung ngbabayad sana ng taxes ang abs cbn di sna bka andyn pa sila mapapanood pa natin .,natin,FIL
 8145,510,Kung ngbabayad sana ng taxes ang abs cbn di sna bka andyn pa sila mapapanood pa natin .,.,OTH
 8146,511,"""  Ako ang matsong daga na babantay sa 'yo .","""",OTH
-8147,511,"""  Ako ang matsong daga na babantay sa 'yo .",,OTH
 8148,511,"""  Ako ang matsong daga na babantay sa 'yo .",Ako,FIL
 8149,511,"""  Ako ang matsong daga na babantay sa 'yo .",ang,FIL
 8150,511,"""  Ako ang matsong daga na babantay sa 'yo .",matsong,FIL
@@ -8173,7 +8166,7 @@ word_id,sentence_id,sentence,word,tag
 8172,512,Binigyan naman ng mga gamit sa eskwela ang mga katutubong estudyante pati na ang mga bata .,bata,FIL
 8173,512,Binigyan naman ng mga gamit sa eskwela ang mga katutubong estudyante pati na ang mga bata .,.,OTH
 8174,513,"Mateo 4:811 Muling dinala Siya ng diablo sa isang bundok na lubhang mataas , at ipinamalas sa Kaniya ang lahat ng mga kaharian sa sanglibutan , at ang kaluwalhatian nila ; At sinabi niya sa Kaniya , Lahat ng mga bagay na ito ay ibibigay ko sa Iyo , kung Ikaw ay magpapatirapa at sasambahin Mo ako .",Mateo,OTH
-8175,513,"Mateo 4:811 Muling dinala Siya ng diablo sa isang bundok na lubhang mataas , at ipinamalas sa Kaniya ang lahat ng mga kaharian sa sanglibutan , at ang kaluwalhatian nila ; At sinabi niya sa Kaniya , Lahat ng mga bagay na ito ay ibibigay ko sa Iyo , kung Ikaw ay magpapatirapa at sasambahin Mo ako .",0.729861111111111,OTH
+8175,513,"Mateo 4:811 Muling dinala Siya ng diablo sa isang bundok na lubhang mataas , at ipinamalas sa Kaniya ang lahat ng mga kaharian sa sanglibutan , at ang kaluwalhatian nila ; At sinabi niya sa Kaniya , Lahat ng mga bagay na ito ay ibibigay ko sa Iyo , kung Ikaw ay magpapatirapa at sasambahin Mo ako .",0.729861111,OTH
 8176,513,"Mateo 4:811 Muling dinala Siya ng diablo sa isang bundok na lubhang mataas , at ipinamalas sa Kaniya ang lahat ng mga kaharian sa sanglibutan , at ang kaluwalhatian nila ; At sinabi niya sa Kaniya , Lahat ng mga bagay na ito ay ibibigay ko sa Iyo , kung Ikaw ay magpapatirapa at sasambahin Mo ako .",Muling,FIL
 8177,513,"Mateo 4:811 Muling dinala Siya ng diablo sa isang bundok na lubhang mataas , at ipinamalas sa Kaniya ang lahat ng mga kaharian sa sanglibutan , at ang kaluwalhatian nila ; At sinabi niya sa Kaniya , Lahat ng mga bagay na ito ay ibibigay ko sa Iyo , kung Ikaw ay magpapatirapa at sasambahin Mo ako .",dinala,FIL
 8178,513,"Mateo 4:811 Muling dinala Siya ng diablo sa isang bundok na lubhang mataas , at ipinamalas sa Kaniya ang lahat ng mga kaharian sa sanglibutan , at ang kaluwalhatian nila ; At sinabi niya sa Kaniya , Lahat ng mga bagay na ito ay ibibigay ko sa Iyo , kung Ikaw ay magpapatirapa at sasambahin Mo ako .",Siya,FIL
@@ -8689,7 +8682,6 @@ word_id,sentence_id,sentence,word,tag
 8688,541,"Siguro sa isang linggo tatlong araw lang na merong dumadating so mahihirapan talaga , ""  ani Rosendo So , chairman ng SINAG Sabi rin ng DA na patuloy nilang hinihimok ang mga hog raiser at trader na magdala ng mga baboy sa Metro Manila dahil sagot naman ng ahensiya ang transport .",talaga,FIL
 8689,541,"Siguro sa isang linggo tatlong araw lang na merong dumadating so mahihirapan talaga , ""  ani Rosendo So , chairman ng SINAG Sabi rin ng DA na patuloy nilang hinihimok ang mga hog raiser at trader na magdala ng mga baboy sa Metro Manila dahil sagot naman ng ahensiya ang transport .",",",OTH
 8690,541,"Siguro sa isang linggo tatlong araw lang na merong dumadating so mahihirapan talaga , ""  ani Rosendo So , chairman ng SINAG Sabi rin ng DA na patuloy nilang hinihimok ang mga hog raiser at trader na magdala ng mga baboy sa Metro Manila dahil sagot naman ng ahensiya ang transport .","""",OTH
-8691,541,"Siguro sa isang linggo tatlong araw lang na merong dumadating so mahihirapan talaga , ""  ani Rosendo So , chairman ng SINAG Sabi rin ng DA na patuloy nilang hinihimok ang mga hog raiser at trader na magdala ng mga baboy sa Metro Manila dahil sagot naman ng ahensiya ang transport .",,OTH
 8692,541,"Siguro sa isang linggo tatlong araw lang na merong dumadating so mahihirapan talaga , ""  ani Rosendo So , chairman ng SINAG Sabi rin ng DA na patuloy nilang hinihimok ang mga hog raiser at trader na magdala ng mga baboy sa Metro Manila dahil sagot naman ng ahensiya ang transport .",ani,FIL
 8693,541,"Siguro sa isang linggo tatlong araw lang na merong dumadating so mahihirapan talaga , ""  ani Rosendo So , chairman ng SINAG Sabi rin ng DA na patuloy nilang hinihimok ang mga hog raiser at trader na magdala ng mga baboy sa Metro Manila dahil sagot naman ng ahensiya ang transport .",Rosendo,OTH
 8694,541,"Siguro sa isang linggo tatlong araw lang na merong dumadating so mahihirapan talaga , ""  ani Rosendo So , chairman ng SINAG Sabi rin ng DA na patuloy nilang hinihimok ang mga hog raiser at trader na magdala ng mga baboy sa Metro Manila dahil sagot naman ng ahensiya ang transport .",So,ENG
@@ -8971,7 +8963,6 @@ word_id,sentence_id,sentence,word,tag
 8970,557,"Natawa ako kay mona "" Kelan ka pa ngka jowa ? """,jowa,FIL
 8971,557,"Natawa ako kay mona "" Kelan ka pa ngka jowa ? """,?,OTH
 8972,557,"Natawa ako kay mona "" Kelan ka pa ngka jowa ? ""","""",OTH
-8973,557,"Natawa ako kay mona "" Kelan ka pa ngka jowa ? """,,OTH
 8974,558,Favorite handa tuwing pasko ay ang iba't-ibang klase ng luto sa pasta dahil ung ang madalas pinamimigau isama na ang walang kamatayang fruit salad,Favorite,ENG
 8975,558,Favorite handa tuwing pasko ay ang iba't-ibang klase ng luto sa pasta dahil ung ang madalas pinamimigau isama na ang walang kamatayang fruit salad,handa,FIL
 8976,558,Favorite handa tuwing pasko ay ang iba't-ibang klase ng luto sa pasta dahil ung ang madalas pinamimigau isama na ang walang kamatayang fruit salad,tuwing,FIL
@@ -9063,7 +9054,6 @@ word_id,sentence_id,sentence,word,tag
 9062,563,"Ako po si Justin ang pangalan ko . """,ko,FIL
 9063,563,"Ako po si Justin ang pangalan ko . """,.,OTH
 9064,563,"Ako po si Justin ang pangalan ko . ""","""",OTH
-9065,563,"Ako po si Justin ang pangalan ko . """,,OTH
 9066,565,Dapat na magkaroon ng death penalty parami na ng parami ang mga masasama,Dapat,FIL
 9067,565,Dapat na magkaroon ng death penalty parami na ng parami ang mga masasama,na,FIL
 9068,565,Dapat na magkaroon ng death penalty parami na ng parami ang mga masasama,magkaroon,FIL
@@ -10981,7 +10971,6 @@ word_id,sentence_id,sentence,word,tag
 10980,691,mabuhay po kayo mga local pinoy artists !,artists,ENG
 10981,691,mabuhay po kayo mga local pinoy artists !,!,OTH
 10982,692,"""  Ipagpaumanhin ninyo pero gusto ko lang kumuha ng tubig .","""",OTH
-10983,692,"""  Ipagpaumanhin ninyo pero gusto ko lang kumuha ng tubig .",,OTH
 10984,692,"""  Ipagpaumanhin ninyo pero gusto ko lang kumuha ng tubig .",Ipagpaumanhin,FIL
 10985,692,"""  Ipagpaumanhin ninyo pero gusto ko lang kumuha ng tubig .",ninyo,FIL
 10986,692,"""  Ipagpaumanhin ninyo pero gusto ko lang kumuha ng tubig .",pero,FIL
@@ -11524,7 +11513,7 @@ word_id,sentence_id,sentence,word,tag
 11523,720,Nahulog ang Magnolia sa 1-3 kartada .,ang,FIL
 11524,720,Nahulog ang Magnolia sa 1-3 kartada .,Magnolia,OTH
 11525,720,Nahulog ang Magnolia sa 1-3 kartada .,sa,FIL
-11526,720,Nahulog ang Magnolia sa 1-3 kartada .,2026-01-03 00:00:00,OTH
+11526,720,Nahulog ang Magnolia sa 1-3 kartada .,1/3/2026 0:00,OTH
 11527,720,Nahulog ang Magnolia sa 1-3 kartada .,kartada,FIL
 11528,720,Nahulog ang Magnolia sa 1-3 kartada .,.,OTH
 11529,721,Kabilang sa mga kinokondena ng grupo ang presensya ng 220 Chinese fishing vessels sa Julian Felipe Reef kamakailan pati na ang presensya ng ilegal na mga istruktura sa Union Bank sa Kalayaan Group of Island .,Kabilang,FIL
@@ -15078,7 +15067,7 @@ word_id,sentence_id,sentence,word,tag
 15077,939,"wow yun ang sabaok , ganun ka pala baka pakitaan ko sila ng convo naten HAHAHA reply mo nga 3-5 words lang HAHAHAHAHAHA",reply,ENG
 15078,939,"wow yun ang sabaok , ganun ka pala baka pakitaan ko sila ng convo naten HAHAHA reply mo nga 3-5 words lang HAHAHAHAHAHA",mo,FIL
 15079,939,"wow yun ang sabaok , ganun ka pala baka pakitaan ko sila ng convo naten HAHAHA reply mo nga 3-5 words lang HAHAHAHAHAHA",nga,FIL
-15080,939,"wow yun ang sabaok , ganun ka pala baka pakitaan ko sila ng convo naten HAHAHA reply mo nga 3-5 words lang HAHAHAHAHAHA",2026-03-05 00:00:00,OTH
+15080,939,"wow yun ang sabaok , ganun ka pala baka pakitaan ko sila ng convo naten HAHAHA reply mo nga 3-5 words lang HAHAHAHAHAHA",3/5/2026 0:00,OTH
 15081,939,"wow yun ang sabaok , ganun ka pala baka pakitaan ko sila ng convo naten HAHAHA reply mo nga 3-5 words lang HAHAHAHAHAHA",words,ENG
 15082,939,"wow yun ang sabaok , ganun ka pala baka pakitaan ko sila ng convo naten HAHAHA reply mo nga 3-5 words lang HAHAHAHAHAHA",lang,FIL
 15083,939,"wow yun ang sabaok , ganun ka pala baka pakitaan ko sila ng convo naten HAHAHA reply mo nga 3-5 words lang HAHAHAHAHAHA",HAHAHAHAHAHA,OTH
@@ -15194,7 +15183,7 @@ word_id,sentence_id,sentence,word,tag
 15193,949,"Also , I find it ironic na sa dinami-dami ng mga mahihirap na topics ng Grade 11-12 , sa Theology pa talaga mahihila yung batch namin pababa .",topics,ENG
 15194,949,"Also , I find it ironic na sa dinami-dami ng mga mahihirap na topics ng Grade 11-12 , sa Theology pa talaga mahihila yung batch namin pababa .",ng,FIL
 15195,949,"Also , I find it ironic na sa dinami-dami ng mga mahihirap na topics ng Grade 11-12 , sa Theology pa talaga mahihila yung batch namin pababa .",Grade,ENG
-15196,949,"Also , I find it ironic na sa dinami-dami ng mga mahihirap na topics ng Grade 11-12 , sa Theology pa talaga mahihila yung batch namin pababa .",2026-11-12 00:00:00,OTH
+15196,949,"Also , I find it ironic na sa dinami-dami ng mga mahihirap na topics ng Grade 11-12 , sa Theology pa talaga mahihila yung batch namin pababa .",11/12/2026 0:00,OTH
 15197,949,"Also , I find it ironic na sa dinami-dami ng mga mahihirap na topics ng Grade 11-12 , sa Theology pa talaga mahihila yung batch namin pababa .",",",OTH
 15198,949,"Also , I find it ironic na sa dinami-dami ng mga mahihirap na topics ng Grade 11-12 , sa Theology pa talaga mahihila yung batch namin pababa .",sa,FIL
 15199,949,"Also , I find it ironic na sa dinami-dami ng mga mahihirap na topics ng Grade 11-12 , sa Theology pa talaga mahihila yung batch namin pababa .",Theology,ENG
@@ -16044,7 +16033,6 @@ word_id,sentence_id,sentence,word,tag
 16043,993,"They say "" Nagcacancer yan kasi umalis sa iglesia "" , ""  Namatay yan kasi parusa ng Dyos sa kanya ng umalis sya . ""","""",OTH
 16044,993,"They say "" Nagcacancer yan kasi umalis sa iglesia "" , ""  Namatay yan kasi parusa ng Dyos sa kanya ng umalis sya . """,",",OTH
 16045,993,"They say "" Nagcacancer yan kasi umalis sa iglesia "" , ""  Namatay yan kasi parusa ng Dyos sa kanya ng umalis sya . ""","""",OTH
-16046,993,"They say "" Nagcacancer yan kasi umalis sa iglesia "" , ""  Namatay yan kasi parusa ng Dyos sa kanya ng umalis sya . """,,OTH
 16047,993,"They say "" Nagcacancer yan kasi umalis sa iglesia "" , ""  Namatay yan kasi parusa ng Dyos sa kanya ng umalis sya . """,Namatay,FIL
 16048,993,"They say "" Nagcacancer yan kasi umalis sa iglesia "" , ""  Namatay yan kasi parusa ng Dyos sa kanya ng umalis sya . """,yan,FIL
 16049,993,"They say "" Nagcacancer yan kasi umalis sa iglesia "" , ""  Namatay yan kasi parusa ng Dyos sa kanya ng umalis sya . """,kasi,FIL
@@ -16058,7 +16046,6 @@ word_id,sentence_id,sentence,word,tag
 16057,993,"They say "" Nagcacancer yan kasi umalis sa iglesia "" , ""  Namatay yan kasi parusa ng Dyos sa kanya ng umalis sya . """,sya,FIL
 16058,993,"They say "" Nagcacancer yan kasi umalis sa iglesia "" , ""  Namatay yan kasi parusa ng Dyos sa kanya ng umalis sya . """,.,OTH
 16059,993,"They say "" Nagcacancer yan kasi umalis sa iglesia "" , ""  Namatay yan kasi parusa ng Dyos sa kanya ng umalis sya . ""","""",OTH
-16060,993,"They say "" Nagcacancer yan kasi umalis sa iglesia "" , ""  Namatay yan kasi parusa ng Dyos sa kanya ng umalis sya . """,,OTH
 16061,994,Sa una masaya siya kasi nga laki ng gain niya .,Sa,FIL
 16062,994,Sa una masaya siya kasi nga laki ng gain niya .,una,FIL
 16063,994,Sa una masaya siya kasi nga laki ng gain niya .,masaya,FIL
@@ -16357,7 +16344,7 @@ word_id,sentence_id,sentence,word,tag
 16356,1012,Nakakawala ka ng problema talaga .,problema,FIL
 16357,1012,Nakakawala ka ng problema talaga .,talaga,FIL
 16358,1012,Nakakawala ka ng problema talaga .,.,OTH
-16359,1013,"2:48 sa mga ndi naka gets , magjajabol ho sya",02:48:00,OTH
+16359,1013,"2:48 sa mga ndi naka gets , magjajabol ho sya",2:48:00,OTH
 16360,1013,"2:48 sa mga ndi naka gets , magjajabol ho sya",sa,FIL
 16361,1013,"2:48 sa mga ndi naka gets , magjajabol ho sya",mga,FIL
 16362,1013,"2:48 sa mga ndi naka gets , magjajabol ho sya",ndi,FIL
@@ -17618,7 +17605,6 @@ word_id,sentence_id,sentence,word,tag
 17617,1089,"Bakit ba kasi nag-celebrate ng New Year kasama ang mga kaibigan ? """,kaibigan,FIL
 17618,1089,"Bakit ba kasi nag-celebrate ng New Year kasama ang mga kaibigan ? """,?,OTH
 17619,1089,"Bakit ba kasi nag-celebrate ng New Year kasama ang mga kaibigan ? ""","""",OTH
-17620,1089,"Bakit ba kasi nag-celebrate ng New Year kasama ang mga kaibigan ? """,,OTH
 17621,1090,"Si ion even hindi siya mag try magpatawa , mapapatawa ka talaga sa kaniya .",Si,FIL
 17622,1090,"Si ion even hindi siya mag try magpatawa , mapapatawa ka talaga sa kaniya .",ion,OTH
 17623,1090,"Si ion even hindi siya mag try magpatawa , mapapatawa ka talaga sa kaniya .",even,ENG
@@ -20900,7 +20886,7 @@ word_id,sentence_id,sentence,word,tag
 20899,1307,"Naging masaklap naman para sa Golden Stags ang nakuhang pagkatalo nang bumagsak sila sa 3-6 kartada para sa huli nilang laro sa elimination round at tuluyan na silang matanggal sa play-in stage , base sa quotient system .",bumagsak,FIL
 20900,1307,"Naging masaklap naman para sa Golden Stags ang nakuhang pagkatalo nang bumagsak sila sa 3-6 kartada para sa huli nilang laro sa elimination round at tuluyan na silang matanggal sa play-in stage , base sa quotient system .",sila,FIL
 20901,1307,"Naging masaklap naman para sa Golden Stags ang nakuhang pagkatalo nang bumagsak sila sa 3-6 kartada para sa huli nilang laro sa elimination round at tuluyan na silang matanggal sa play-in stage , base sa quotient system .",sa,FIL
-20902,1307,"Naging masaklap naman para sa Golden Stags ang nakuhang pagkatalo nang bumagsak sila sa 3-6 kartada para sa huli nilang laro sa elimination round at tuluyan na silang matanggal sa play-in stage , base sa quotient system .",2026-03-06 00:00:00,OTH
+20902,1307,"Naging masaklap naman para sa Golden Stags ang nakuhang pagkatalo nang bumagsak sila sa 3-6 kartada para sa huli nilang laro sa elimination round at tuluyan na silang matanggal sa play-in stage , base sa quotient system .",3/6/2026 0:00,OTH
 20903,1307,"Naging masaklap naman para sa Golden Stags ang nakuhang pagkatalo nang bumagsak sila sa 3-6 kartada para sa huli nilang laro sa elimination round at tuluyan na silang matanggal sa play-in stage , base sa quotient system .",kartada,FIL
 20904,1307,"Naging masaklap naman para sa Golden Stags ang nakuhang pagkatalo nang bumagsak sila sa 3-6 kartada para sa huli nilang laro sa elimination round at tuluyan na silang matanggal sa play-in stage , base sa quotient system .",para,FIL
 20905,1307,"Naging masaklap naman para sa Golden Stags ang nakuhang pagkatalo nang bumagsak sila sa 3-6 kartada para sa huli nilang laro sa elimination round at tuluyan na silang matanggal sa play-in stage , base sa quotient system .",sa,FIL
@@ -22223,7 +22209,6 @@ word_id,sentence_id,sentence,word,tag
 22222,1378,"Sabihin mo : "" Tunay na ako ay sinaway na sumamba sa mga dinadalanginan ninyo bukod pa kay Allh , noong dumating sa akin ang mga malinaw na patunay mula sa Panginoon ko , at inutusan na magpasakop sa Panginoon ng mga nilalang . """,nilalang,FIL
 22223,1378,"Sabihin mo : "" Tunay na ako ay sinaway na sumamba sa mga dinadalanginan ninyo bukod pa kay Allh , noong dumating sa akin ang mga malinaw na patunay mula sa Panginoon ko , at inutusan na magpasakop sa Panginoon ng mga nilalang . """,.,OTH
 22224,1378,"Sabihin mo : "" Tunay na ako ay sinaway na sumamba sa mga dinadalanginan ninyo bukod pa kay Allh , noong dumating sa akin ang mga malinaw na patunay mula sa Panginoon ko , at inutusan na magpasakop sa Panginoon ng mga nilalang . ""","""",OTH
-22225,1378,"Sabihin mo : "" Tunay na ako ay sinaway na sumamba sa mga dinadalanginan ninyo bukod pa kay Allh , noong dumating sa akin ang mga malinaw na patunay mula sa Panginoon ko , at inutusan na magpasakop sa Panginoon ng mga nilalang . """,,OTH
 22226,1380,"Iba-ibang petsa ang itinakda ng regional at division offices ng DepEd sa pagsisimula ng expansion phase , batay sa kanilang kahandaan : Sa Calabarzon , magbubukas na ulit ang klase matapos ang 3 linggong pahinga dahil sa health break at mid-year break .",Iba-ibang,FIL
 22227,1380,"Iba-ibang petsa ang itinakda ng regional at division offices ng DepEd sa pagsisimula ng expansion phase , batay sa kanilang kahandaan : Sa Calabarzon , magbubukas na ulit ang klase matapos ang 3 linggong pahinga dahil sa health break at mid-year break .",petsa,FIL
 22228,1380,"Iba-ibang petsa ang itinakda ng regional at division offices ng DepEd sa pagsisimula ng expansion phase , batay sa kanilang kahandaan : Sa Calabarzon , magbubukas na ulit ang klase matapos ang 3 linggong pahinga dahil sa health break at mid-year break .",ang,FIL
@@ -23518,7 +23503,6 @@ word_id,sentence_id,sentence,word,tag
 23517,1458,Malaking bagay ang magagawa ng San Miguel sa aking mga kababayan sa Bulacan .,Bulacan,OTH
 23518,1458,Malaking bagay ang magagawa ng San Miguel sa aking mga kababayan sa Bulacan .,.,OTH
 23519,1459,"""  Tinulungan niyang isara ang zipper ng damit ni Maria .","""",OTH
-23520,1459,"""  Tinulungan niyang isara ang zipper ng damit ni Maria .",,OTH
 23521,1459,"""  Tinulungan niyang isara ang zipper ng damit ni Maria .",Tinulungan,FIL
 23522,1459,"""  Tinulungan niyang isara ang zipper ng damit ni Maria .",niyang,FIL
 23523,1459,"""  Tinulungan niyang isara ang zipper ng damit ni Maria .",isara,FIL
@@ -23731,7 +23715,7 @@ word_id,sentence_id,sentence,word,tag
 23730,1473,"Thats how important their roles are on our team , sabi ni Reyes , na pakay ikalas ang TNT sa 2-2 pagkabuhol sa San Miguel sa serye .",ang,FIL
 23731,1473,"Thats how important their roles are on our team , sabi ni Reyes , na pakay ikalas ang TNT sa 2-2 pagkabuhol sa San Miguel sa serye .",TNT,OTH
 23732,1473,"Thats how important their roles are on our team , sabi ni Reyes , na pakay ikalas ang TNT sa 2-2 pagkabuhol sa San Miguel sa serye .",sa,FIL
-23733,1473,"Thats how important their roles are on our team , sabi ni Reyes , na pakay ikalas ang TNT sa 2-2 pagkabuhol sa San Miguel sa serye .",2-2,OTH
+23733,1473,"Thats how important their roles are on our team , sabi ni Reyes , na pakay ikalas ang TNT sa 2-2 pagkabuhol sa San Miguel sa serye .",2-Feb,OTH
 23734,1473,"Thats how important their roles are on our team , sabi ni Reyes , na pakay ikalas ang TNT sa 2-2 pagkabuhol sa San Miguel sa serye .",pagkabuhol,FIL
 23735,1473,"Thats how important their roles are on our team , sabi ni Reyes , na pakay ikalas ang TNT sa 2-2 pagkabuhol sa San Miguel sa serye .",sa,FIL
 23736,1473,"Thats how important their roles are on our team , sabi ni Reyes , na pakay ikalas ang TNT sa 2-2 pagkabuhol sa San Miguel sa serye .",San,OTH
@@ -24378,7 +24362,6 @@ word_id,sentence_id,sentence,word,tag
 24377,1513,Magwakas na kaya ang kanilang paghahanap ?,paghahanap,FIL
 24378,1513,Magwakas na kaya ang kanilang paghahanap ?,?,OTH
 24379,1514,"""  Huwag kang gumawa ng iskandalo rito , ""  ani Vida kay Maria .","""",OTH
-24380,1514,"""  Huwag kang gumawa ng iskandalo rito , ""  ani Vida kay Maria .",,OTH
 24381,1514,"""  Huwag kang gumawa ng iskandalo rito , ""  ani Vida kay Maria .",Huwag,FIL
 24382,1514,"""  Huwag kang gumawa ng iskandalo rito , ""  ani Vida kay Maria .",kang,FIL
 24383,1514,"""  Huwag kang gumawa ng iskandalo rito , ""  ani Vida kay Maria .",gumawa,FIL
@@ -24387,7 +24370,6 @@ word_id,sentence_id,sentence,word,tag
 24386,1514,"""  Huwag kang gumawa ng iskandalo rito , ""  ani Vida kay Maria .",rito,FIL
 24387,1514,"""  Huwag kang gumawa ng iskandalo rito , ""  ani Vida kay Maria .",",",OTH
 24388,1514,"""  Huwag kang gumawa ng iskandalo rito , ""  ani Vida kay Maria .","""",OTH
-24389,1514,"""  Huwag kang gumawa ng iskandalo rito , ""  ani Vida kay Maria .",,OTH
 24390,1514,"""  Huwag kang gumawa ng iskandalo rito , ""  ani Vida kay Maria .",ani,FIL
 24391,1514,"""  Huwag kang gumawa ng iskandalo rito , ""  ani Vida kay Maria .",Vida,OTH
 24392,1514,"""  Huwag kang gumawa ng iskandalo rito , ""  ani Vida kay Maria .",kay,FIL
@@ -26666,7 +26648,7 @@ word_id,sentence_id,sentence,word,tag
 26665,1653,"Anuman ang dahilan , i respeto ntin si Kabayan .",si,FIL
 26666,1653,"Anuman ang dahilan , i respeto ntin si Kabayan .",Kabayan,FIL
 26667,1653,"Anuman ang dahilan , i respeto ntin si Kabayan .",.,OTH
-26668,1654,True raw ban a pahinga muna si Jhong sa Showtime dahil mas gusto niyang tutukan muna ang pag-aalaga sa misis niya at bagong silang na sanggol .,True,ENG
+26668,1654,True raw ban a pahinga muna si Jhong sa Showtime dahil mas gusto niyang tutukan muna ang pag-aalaga sa misis niya at bagong silang na sanggol .,TRUE,ENG
 26669,1654,True raw ban a pahinga muna si Jhong sa Showtime dahil mas gusto niyang tutukan muna ang pag-aalaga sa misis niya at bagong silang na sanggol .,raw,FIL
 26670,1654,True raw ban a pahinga muna si Jhong sa Showtime dahil mas gusto niyang tutukan muna ang pag-aalaga sa misis niya at bagong silang na sanggol .,ban,ENG
 26671,1654,True raw ban a pahinga muna si Jhong sa Showtime dahil mas gusto niyang tutukan muna ang pag-aalaga sa misis niya at bagong silang na sanggol .,a,ENG
@@ -27873,7 +27855,7 @@ word_id,sentence_id,sentence,word,tag
 27872,1720,"Hello phinvest , may alam ba kayong pos provider para sa mga retail stores or may idea ba kayo sinong pos provider ng mga 7-11 , Jollibee , etc .",provider,ENG
 27873,1720,"Hello phinvest , may alam ba kayong pos provider para sa mga retail stores or may idea ba kayo sinong pos provider ng mga 7-11 , Jollibee , etc .",ng,FIL
 27874,1720,"Hello phinvest , may alam ba kayong pos provider para sa mga retail stores or may idea ba kayo sinong pos provider ng mga 7-11 , Jollibee , etc .",mga,FIL
-27875,1720,"Hello phinvest , may alam ba kayong pos provider para sa mga retail stores or may idea ba kayo sinong pos provider ng mga 7-11 , Jollibee , etc .",7-11,OTH
+27875,1720,"Hello phinvest , may alam ba kayong pos provider para sa mga retail stores or may idea ba kayo sinong pos provider ng mga 7-11 , Jollibee , etc .",11-Jul,OTH
 27876,1720,"Hello phinvest , may alam ba kayong pos provider para sa mga retail stores or may idea ba kayo sinong pos provider ng mga 7-11 , Jollibee , etc .",",",OTH
 27877,1720,"Hello phinvest , may alam ba kayong pos provider para sa mga retail stores or may idea ba kayo sinong pos provider ng mga 7-11 , Jollibee , etc .",Jollibee,OTH
 27878,1720,"Hello phinvest , may alam ba kayong pos provider para sa mga retail stores or may idea ba kayo sinong pos provider ng mga 7-11 , Jollibee , etc .",",",OTH
@@ -31783,7 +31765,7 @@ word_id,sentence_id,sentence,word,tag
 31782,1969,solid kanina naka 13 wins ako kaso mgayon maalat 3-6 bukas ng madaling araw na lang laro hehehe salamat sa strat at tutor sa mga laro,kaso,FIL
 31783,1969,solid kanina naka 13 wins ako kaso mgayon maalat 3-6 bukas ng madaling araw na lang laro hehehe salamat sa strat at tutor sa mga laro,mgayon,FIL
 31784,1969,solid kanina naka 13 wins ako kaso mgayon maalat 3-6 bukas ng madaling araw na lang laro hehehe salamat sa strat at tutor sa mga laro,maalat,FIL
-31785,1969,solid kanina naka 13 wins ako kaso mgayon maalat 3-6 bukas ng madaling araw na lang laro hehehe salamat sa strat at tutor sa mga laro,3-6,OTH
+31785,1969,solid kanina naka 13 wins ako kaso mgayon maalat 3-6 bukas ng madaling araw na lang laro hehehe salamat sa strat at tutor sa mga laro,6-Mar,OTH
 31786,1969,solid kanina naka 13 wins ako kaso mgayon maalat 3-6 bukas ng madaling araw na lang laro hehehe salamat sa strat at tutor sa mga laro,bukas,FIL
 31787,1969,solid kanina naka 13 wins ako kaso mgayon maalat 3-6 bukas ng madaling araw na lang laro hehehe salamat sa strat at tutor sa mga laro,ng,FIL
 31788,1969,solid kanina naka 13 wins ako kaso mgayon maalat 3-6 bukas ng madaling araw na lang laro hehehe salamat sa strat at tutor sa mga laro,madaling,FIL
@@ -33468,7 +33450,7 @@ word_id,sentence_id,sentence,word,tag
 33467,2074,"Lars Ubaldo noong 20 Hulyo 2017: Sina Therese Vilog , isang bagonggradweyt ng Pilosopiya mula sa UP Diliman at Javier Nimer nagradweyt ng accounting ng Pamantasan ng Lungsod ng Maynila .",noong,FIL
 33468,2074,"Lars Ubaldo noong 20 Hulyo 2017: Sina Therese Vilog , isang bagonggradweyt ng Pilosopiya mula sa UP Diliman at Javier Nimer nagradweyt ng accounting ng Pamantasan ng Lungsod ng Maynila .",20,OTH
 33469,2074,"Lars Ubaldo noong 20 Hulyo 2017: Sina Therese Vilog , isang bagonggradweyt ng Pilosopiya mula sa UP Diliman at Javier Nimer nagradweyt ng accounting ng Pamantasan ng Lungsod ng Maynila .",Hulyo,FIL
-33470,2074,"Lars Ubaldo noong 20 Hulyo 2017: Sina Therese Vilog , isang bagonggradweyt ng Pilosopiya mula sa UP Diliman at Javier Nimer nagradweyt ng accounting ng Pamantasan ng Lungsod ng Maynila .",2017:,OTH
+33470,2074,"Lars Ubaldo noong 20 Hulyo 2017: Sina Therese Vilog , isang bagonggradweyt ng Pilosopiya mula sa UP Diliman at Javier Nimer nagradweyt ng accounting ng Pamantasan ng Lungsod ng Maynila .",2017:00:00,OTH
 33471,2074,"Lars Ubaldo noong 20 Hulyo 2017: Sina Therese Vilog , isang bagonggradweyt ng Pilosopiya mula sa UP Diliman at Javier Nimer nagradweyt ng accounting ng Pamantasan ng Lungsod ng Maynila .",Sina,FIL
 33472,2074,"Lars Ubaldo noong 20 Hulyo 2017: Sina Therese Vilog , isang bagonggradweyt ng Pilosopiya mula sa UP Diliman at Javier Nimer nagradweyt ng accounting ng Pamantasan ng Lungsod ng Maynila .",Therese,OTH
 33473,2074,"Lars Ubaldo noong 20 Hulyo 2017: Sina Therese Vilog , isang bagonggradweyt ng Pilosopiya mula sa UP Diliman at Javier Nimer nagradweyt ng accounting ng Pamantasan ng Lungsod ng Maynila .",Vilog,OTH
@@ -35003,7 +34985,6 @@ word_id,sentence_id,sentence,word,tag
 35002,2168,"Kaunti ang pinasasalamatan ninyo ! """,ninyo,FIL
 35003,2168,"Kaunti ang pinasasalamatan ninyo ! """,!,OTH
 35004,2168,"Kaunti ang pinasasalamatan ninyo ! ""","""",OTH
-35005,2168,"Kaunti ang pinasasalamatan ninyo ! """,,OTH
 35006,2169,Umaasa naman si Shiela na maging inspirasyon sana sila sa mga ibang nahihirapan din sa kabuhayan ngayong may pandemic .,Umaasa,FIL
 35007,2169,Umaasa naman si Shiela na maging inspirasyon sana sila sa mga ibang nahihirapan din sa kabuhayan ngayong may pandemic .,naman,FIL
 35008,2169,Umaasa naman si Shiela na maging inspirasyon sana sila sa mga ibang nahihirapan din sa kabuhayan ngayong may pandemic .,si,FIL
@@ -38156,7 +38137,6 @@ word_id,sentence_id,sentence,word,tag
 38155,2352,"Pagkatapos ng ilang araw , sasabihin sa 'yo , "" Pa'no ka ba nagka ( insert merit ) ? """,),OTH
 38156,2352,"Pagkatapos ng ilang araw , sasabihin sa 'yo , "" Pa'no ka ba nagka ( insert merit ) ? """,?,OTH
 38157,2352,"Pagkatapos ng ilang araw , sasabihin sa 'yo , "" Pa'no ka ba nagka ( insert merit ) ? ""","""",OTH
-38158,2352,"Pagkatapos ng ilang araw , sasabihin sa 'yo , "" Pa'no ka ba nagka ( insert merit ) ? """,,OTH
 38159,2353,start na ang content HAHAHAHA,start,ENG
 38160,2353,start na ang content HAHAHAHA,na,FIL
 38161,2353,start na ang content HAHAHAHA,ang,FIL
@@ -38514,7 +38494,6 @@ word_id,sentence_id,sentence,word,tag
 38513,2372,Isang maikling video ang ibinahagi niya sa Instagram kung saan makikita ang paghihintay niya sa isang ospital sa US at ang pakikipag-usap niya sa medical staff na siyang magbabakuna sa kanya .,kanya,FIL
 38514,2372,Isang maikling video ang ibinahagi niya sa Instagram kung saan makikita ang paghihintay niya sa isang ospital sa US at ang pakikipag-usap niya sa medical staff na siyang magbabakuna sa kanya .,.,OTH
 38515,2376,"""  Dahil wala pang kumalas sa grupo ni Dorong Dulas nang hindi nakatikim ng maagang kamatayan .","""",OTH
-38516,2376,"""  Dahil wala pang kumalas sa grupo ni Dorong Dulas nang hindi nakatikim ng maagang kamatayan .",,OTH
 38517,2376,"""  Dahil wala pang kumalas sa grupo ni Dorong Dulas nang hindi nakatikim ng maagang kamatayan .",Dahil,FIL
 38518,2376,"""  Dahil wala pang kumalas sa grupo ni Dorong Dulas nang hindi nakatikim ng maagang kamatayan .",wala,FIL
 38519,2376,"""  Dahil wala pang kumalas sa grupo ni Dorong Dulas nang hindi nakatikim ng maagang kamatayan .",pang,FIL
@@ -38879,7 +38858,6 @@ word_id,sentence_id,sentence,word,tag
 38878,2395,"Kaya umiwas ka sa kanila at magsabi ka : "" Kapayapaan ! """,Kapayapaan,FIL
 38879,2395,"Kaya umiwas ka sa kanila at magsabi ka : "" Kapayapaan ! """,!,OTH
 38880,2395,"Kaya umiwas ka sa kanila at magsabi ka : "" Kapayapaan ! ""","""",OTH
-38881,2395,"Kaya umiwas ka sa kanila at magsabi ka : "" Kapayapaan ! """,,OTH
 38882,2396,"Sa halip na ipatupad ang deployment bad , sinabi ni Hontiveros na dapat taasan ang suweldo ng health care workers para magtrabaho na lang dito at hindi sa ibang bansa .",Sa,FIL
 38883,2396,"Sa halip na ipatupad ang deployment bad , sinabi ni Hontiveros na dapat taasan ang suweldo ng health care workers para magtrabaho na lang dito at hindi sa ibang bansa .",halip,FIL
 38884,2396,"Sa halip na ipatupad ang deployment bad , sinabi ni Hontiveros na dapat taasan ang suweldo ng health care workers para magtrabaho na lang dito at hindi sa ibang bansa .",na,FIL
@@ -41295,7 +41273,7 @@ word_id,sentence_id,sentence,word,tag
 41294,2565,ay may rehearsal din atang naganap sa mga teumes ?,mga,FIL
 41295,2565,ay may rehearsal din atang naganap sa mga teumes ?,teumes,OTH
 41296,2565,ay may rehearsal din atang naganap sa mga teumes ?,?,OTH
-41297,2566,"True , kasi sinabi rin noon ni Duterte na malaki ang utang na loob niya sa mga Marcoses , so sabwatan talaga ang mga yan .",True,ENG
+41297,2566,"True , kasi sinabi rin noon ni Duterte na malaki ang utang na loob niya sa mga Marcoses , so sabwatan talaga ang mga yan .",TRUE,ENG
 41298,2566,"True , kasi sinabi rin noon ni Duterte na malaki ang utang na loob niya sa mga Marcoses , so sabwatan talaga ang mga yan .",",",OTH
 41299,2566,"True , kasi sinabi rin noon ni Duterte na malaki ang utang na loob niya sa mga Marcoses , so sabwatan talaga ang mga yan .",kasi,FIL
 41300,2566,"True , kasi sinabi rin noon ni Duterte na malaki ang utang na loob niya sa mga Marcoses , so sabwatan talaga ang mga yan .",sinabi,FIL
@@ -41481,7 +41459,6 @@ word_id,sentence_id,sentence,word,tag
 41480,2579,""" Mga dilawan tae ! """,tae,FIL
 41481,2579,""" Mga dilawan tae ! """,!,OTH
 41482,2579,""" Mga dilawan tae ! ""","""",OTH
-41483,2579,""" Mga dilawan tae ! """,,OTH
 41484,2580,"Operational na ito , ang Alegria Singapura sa may Teck Lim Road .",Operational,ENG
 41485,2580,"Operational na ito , ang Alegria Singapura sa may Teck Lim Road .",na,FIL
 41486,2580,"Operational na ito , ang Alegria Singapura sa may Teck Lim Road .",ito,FIL

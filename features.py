@@ -15,6 +15,10 @@ FIL_PREFIXES = {
     'nakaka', 'ma', 'pa'
 }
 
+# Prefixes allowed only before a hyphen.
+# "na" is included for examples such as "na-award".
+HYPHEN_FIL_PREFIXES = FIL_PREFIXES | {'na'}
+
 # Common Filipino function words and particles
 FIL_PARTICLES = {
     'sa', 'ng', 'na', 'pa', 'mga', 'rin', 'din', 'ang', 
@@ -82,6 +86,18 @@ def extract_word_features(word: str) -> Dict[str, Any]:
     })
 
     # =========================================================
+    # Group 3B: Character-level n-grams
+    # Captures letter sequences anywhere inside the token.
+    # Boundary symbols help distinguish word beginnings/endings.
+    # =========================================================
+    padded_word = f"^{w_lower}$"
+
+    for n in range(2, 5):  # character n-grams of length 2, 3, and 4
+        for i in range(len(padded_word) - n + 1):
+            ngram = padded_word[i:i + n]
+            features[f'char_{n}gram={ngram}'] = 1
+            
+    # =========================================================
     # Group 4: Tagalog Morphology & Code-Switching Indicators
     # =========================================================
     
@@ -89,7 +105,7 @@ def extract_word_features(word: str) -> Dict[str, Any]:
     has_fil_prefix_before_hyphen = False
     if '-' in w_lower:
         prefix = w_lower.split('-')[0]
-        if prefix in FIL_PREFIXES:
+        if prefix in HYPHEN_FIL_PREFIXES:
             has_fil_prefix_before_hyphen = True
 
     # Detect native infix patterns (-um-, -in-) inside verb stems

@@ -26,9 +26,17 @@ import pandas as pd
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.naive_bayes import MultinomialNB
-from sklearn.metrics import classification_report, accuracy_score, f1_score
+from sklearn.metrics import (
+    classification_report,
+    accuracy_score,
+    f1_score,
+    confusion_matrix
+)
 from features import extract_passage_features as featurize_tokens
 
+from sklearn.linear_model import LogisticRegression
+from sklearn.svm import LinearSVC
+import numpy as np
 
 RANDOM_SEED = 42
 TRAIN_FRAC = 0.70
@@ -37,16 +45,89 @@ VAL_FRAC = 0.15
 
 
 def load_and_group(csv_path: str):
-    """Load the master CSV and group tokens/tags by sentence, in order."""
-    df = pd.read_csv(csv_path)
-    df['sentence_id'] = df['sentence_id'].astype(int)
-    df = df.sort_values(['sentence_id', 'word_id']).reset_index(drop=True)
+    """Load, validate, and group tokens/tags by sentence."""
 
-    sentences = defaultdict(lambda: {'tokens': [], 'tags': []})
+    # keep_default_na=False prevents words such as "NA" from being
+    # automatically interpreted as missing values.
+    df = pd.read_csv(csv_path, keep_default_na=False)
+
+    required_columns = {
+        'sentence_id',
+        'word_id',
+        'word',
+        'tag'
+    }
+
+    missing_columns = required_columns - set(df.columns)
+    if missing_columns:
+        raise ValueError(
+            f"Missing required columns: {sorted(missing_columns)}"
+        )
+
+    df['sentence_id'] = pd.to_numeric(
+        df['sentence_id'],
+        errors='raise'
+    ).astype(int)
+
+    df['word_id'] = pd.to_numeric(
+        df['word_id'],
+        errors='raise'
+    ).astype(int)
+
+    df['word'] = df['word'].astype(str).str.strip()
+    df['tag'] = df['tag'].astype(str).str.strip().str.upper()
+
+    empty_words = df[df['word'] == '']
+    if not empty_words.empty:
+        raise ValueError(
+            f"Dataset contains {len(empty_words)} empty word cells."
+        )
+
+    empty_tags = df[df['tag'] == '']
+    if not empty_tags.empty:
+        raise ValueError(
+            f"Dataset contains {len(empty_tags)} empty tag cells."
+        )
+
+    allowed_tags = {'ENG', 'FIL', 'CS', 'OTH'}
+    invalid_tags = sorted(set(df['tag']) - allowed_tags)
+
+    if invalid_tags:
+        raise ValueError(
+            f"Invalid tags found: {invalid_tags}"
+        )
+
+    duplicates = df.duplicated(
+        subset=['sentence_id', 'word_id'],
+        keep=False
+    )
+
+    if duplicates.any():
+        duplicate_rows = df.loc[
+            duplicates,
+            ['sentence_id', 'word_id']
+        ]
+
+        raise ValueError(
+            "Duplicate sentence_id and word_id combinations found:\n"
+            f"{duplicate_rows.head(10)}"
+        )
+
+    df = df.sort_values(
+        ['sentence_id', 'word_id']
+    ).reset_index(drop=True)
+
+    sentences = defaultdict(
+        lambda: {'tokens': [], 'tags': []}
+    )
+
     for _, row in df.iterrows():
         sid = row['sentence_id']
-        sentences[sid]['tokens'].append(str(row['word']))
-        sentences[sid]['tags'].append(str(row['tag']))
+        sentences[sid]['tokens'].append(row['word'])
+        sentences[sid]['tags'].append(row['tag'])
+
+    print("Dataset validation passed.")
+    print(f"Valid labels: {sorted(allowed_tags)}")
 
     return sentences
 
@@ -81,49 +162,68 @@ def build_dataset(sentences, sentence_id_subset):
 
 def oversample_training_set(X_dicts, y_labels):
     """
-    Random Oversampling: Duplicates minority class tokens.
-    Capped 'CS' to avoid extreme overfitting on a very small initial sample.
+    Randomly oversample minority classes while preserving every
+    original training example.
     """
     rng = random.Random(RANDOM_SEED)
     counts = Counter(y_labels)
-    max_count = max(counts.values())
+    majority_count = max(counts.values())
 
-    # Create a targeted strategy dictating exact counts per class.
-    # CS cap chosen empirically: swept 500/1000/2500/5000/10000/22448 on
-    # the validation set and found LOWER caps perform better, not worse --
-    # cap=500 gave the best macro-F1 (0.810 vs 0.742 at the original 2500),
-    # with much more balanced CS precision/recall. Duplicating only ~143
-    # real CS examples up thousands of times just overfits to those exact
-    # repeated examples rather than learning a generalizable CS pattern.
     target_counts = {
-        'FIL': max_count,  # 22,448
-        'ENG': max_count,  # 22,448
-        'OTH': max_count,  # 22,448
-        'CS': 500           # empirically best on validation (see sweep above)
+        'FIL': majority_count,
+        'ENG': majority_count,
+        'OTH': majority_count,
+        'CS': 500
     }
 
-    # Group feature dict indices by class label
     class_indices = defaultdict(list)
-    for idx, label in enumerate(y_labels):
-        class_indices[label].append(idx)
 
-    resampled_X, resampled_y = [], []
-    for label, indices in class_indices.items():
-        # Get the specific target count for this class, default to max_count if not listed
-        target = target_counts.get(label, max_count)
-        
-        # Draw samples with replacement up to the specific target count
-        sampled_indices = rng.choices(indices, k=target)
-        for idx in sampled_indices:
-            resampled_X.append(X_dicts[idx])
-            resampled_y.append(y_labels[idx])
+    for index, label in enumerate(y_labels):
+        class_indices[label].append(index)
 
-    # Shuffle the resampled training set
+    resampled_X = list(X_dicts)
+    resampled_y = list(y_labels)
+
+    for label, target_count in target_counts.items():
+        current_count = counts.get(label, 0)
+
+        if current_count == 0:
+            raise ValueError(
+                f"Cannot oversample class '{label}' because it has no examples."
+            )
+
+        number_to_add = target_count - current_count
+
+        if number_to_add <= 0:
+            continue
+
+        extra_indices = rng.choices(
+            class_indices[label],
+            k=number_to_add
+        )
+
+        for index in extra_indices:
+            resampled_X.append(X_dicts[index])
+            resampled_y.append(y_labels[index])
+
     combined = list(zip(resampled_X, resampled_y))
     rng.shuffle(combined)
+
     shuffled_X, shuffled_y = zip(*combined)
-    
+
     return list(shuffled_X), list(shuffled_y)
+
+
+def ensure_int32_sparse_indices(X):
+    """
+    Convert a sparse matrix to CSR format with 32-bit index arrays.
+    Required by some scikit-learn linear classifiers.
+    """
+    X = X.tocsr(copy=True)
+    X.indices = X.indices.astype(np.int32, copy=False)
+    X.indptr = X.indptr.astype(np.int32, copy=False)
+    return X
+
 
 def main(csv_path):
     print(f"Loading {csv_path} ...")
@@ -152,13 +252,49 @@ def main(csv_path):
     X_train = vectorizer.fit_transform(X_train_dicts)
     X_val = vectorizer.transform(X_val_dicts)
     X_test = vectorizer.transform(X_test_dicts)
+
+    # Ensure compatibility with LogisticRegression and LinearSVC.
+    X_train = ensure_int32_sparse_indices(X_train)
+    X_val = ensure_int32_sparse_indices(X_val)
+    X_test = ensure_int32_sparse_indices(X_test)
     print(f"  Feature matrix width: {X_train.shape[1]} columns\n")
 
     candidates = {
         'DecisionTree': DecisionTreeClassifier(
-            random_state=RANDOM_SEED, max_depth=20, min_samples_leaf=5
+            random_state=RANDOM_SEED,
+            max_depth=20,
+            min_samples_leaf=5
         ),
-        'MultinomialNB': MultinomialNB(),
+
+        'MultinomialNB_alpha_1.0': MultinomialNB(
+            alpha=1.0
+        ),
+
+        'LogisticRegression': LogisticRegression(
+            random_state=RANDOM_SEED,
+            max_iter=1000,
+            solver='saga'
+        ),
+
+        'LinearSVC_C_0.1': LinearSVC(
+            C=0.1,
+            random_state=RANDOM_SEED
+        ),
+
+        'LinearSVC_C_0.5': LinearSVC(
+            C=0.5,
+            random_state=RANDOM_SEED
+        ),
+
+        'LinearSVC_C_1.0': LinearSVC(
+            C=1.0,
+            random_state=RANDOM_SEED
+        ),
+
+        'LinearSVC_C_2.0': LinearSVC(
+            C=2.0,
+            random_state=RANDOM_SEED
+        ),
     }
 
     print("=" * 60)
@@ -184,8 +320,49 @@ def main(csv_path):
     print(f"FINAL TEST SET RESULTS -- {best_name}")
     print("=" * 60)
     test_preds = best_model.predict(X_test)
-    print(f"Overall accuracy: {accuracy_score(y_test, test_preds):.4f}")
-    print(classification_report(y_test, test_preds, digits=3, zero_division=0))
+    test_accuracy = accuracy_score(y_test, test_preds)
+
+    print(f"Overall accuracy: {test_accuracy:.4f}")
+    print(
+        classification_report(
+            y_test,
+            test_preds,
+            digits=3,
+            zero_division=0
+        )
+    )
+
+    # Save detailed classification metrics.
+    test_report = classification_report(
+        y_test,
+        test_preds,
+        labels=['CS', 'ENG', 'FIL', 'OTH'],
+        output_dict=True,
+        zero_division=0
+    )
+
+    report_df = pd.DataFrame(test_report).transpose()
+    report_df.to_csv('test_classification_report.csv')
+
+    # Save the confusion matrix.
+    label_order = ['CS', 'ENG', 'FIL', 'OTH']
+
+    matrix = confusion_matrix(
+        y_test,
+        test_preds,
+        labels=label_order
+    )
+
+    matrix_df = pd.DataFrame(
+        matrix,
+        index=[f'Actual_{label}' for label in label_order],
+        columns=[f'Predicted_{label}' for label in label_order]
+    )
+
+    matrix_df.to_csv('test_confusion_matrix.csv')
+
+    print("\nSaved test_classification_report.csv")
+    print("Saved test_confusion_matrix.csv")
 
     with open('vectorizer.pkl', 'wb') as f:
         pickle.dump(vectorizer, f)

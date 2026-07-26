@@ -33,28 +33,48 @@ with open(_VECTORIZER_PATH, 'rb') as f:
 
 def tag_language(tokens: List[str]) -> List[str]:
     """
-    Tags each token in the input list with its predicted language using the trained ML model.
-    
+    Predict the language tag of every token.
+
     Args:
-        tokens: List of word tokens (strings).
+        tokens: List of token strings.
+
     Returns:
-        tags: List of predicted tags ("ENG", "FIL", "CS", or "OTH"), one per token.
+        List of predicted tags: ENG, FIL, CS, or OTH.
     """
+    if not isinstance(tokens, list):
+        raise TypeError("tokens must be provided as a list of strings.")
+
     if not tokens:
         return []
 
-    # 1. Extract pure word-level features from input tokens
+    if not all(isinstance(token, str) for token in tokens):
+        raise TypeError("Every token must be a string.")
+
+    # Extract the same features used during model training.
     feature_dicts = extract_passage_features(tokens)
 
-    # 2. Vectorize features into the 8,161-column matrix expected by the model
+    # Convert feature dictionaries using the trained vectorizer.
     X = _VECTORIZER.transform(feature_dicts)
 
-    # 3. Predict language tags using the trained Decision Tree model
+    # Predict using the trained classifier.
     predicted = _MODEL.predict(X)
+    tags = [str(tag) for tag in predicted]
 
-    # 4. Return predictions as a list of strings
-    return [str(tag) for tag in predicted]
+    allowed_tags = {'ENG', 'FIL', 'CS', 'OTH'}
 
+    if len(tags) != len(tokens):
+        raise RuntimeError(
+            "The number of predicted tags does not match the number of tokens."
+        )
+
+    invalid_tags = set(tags) - allowed_tags
+
+    if invalid_tags:
+        raise RuntimeError(
+            f"The model returned invalid tags: {sorted(invalid_tags)}"
+        )
+
+    return tags
 
 if __name__ == "__main__":
     example_tokens = [
