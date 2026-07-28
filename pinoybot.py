@@ -1,3 +1,5 @@
+# Pat
+
 """
 pinoybot.py
 
@@ -31,49 +33,37 @@ with open(_VECTORIZER_PATH, 'rb') as f:
     _VECTORIZER = pickle.load(f)
 
 
-def tag_language(tokens: List[str], debug: bool = False):
+def tag_language(tokens: List[str]) -> List[str]:
     """
     Tags each token in the input list with its predicted language using the trained ML model.
-
+    
     Args:
         tokens: List of word tokens (strings).
-        debug: If True, also returns the extracted feature dictionaries.
-
     Returns:
-        If debug=False:
-            List[str] of predicted tags.
-        If debug=True:
-            (tags, feature_dicts)
+        tags: List of predicted tags ("ENG", "FIL", "CS", or "OTH"), one per token.
     """
     if not tokens:
-        return ([], []) if debug else []
+        return []
 
-    # 1. Extract features from the input tokens using features.py
-    feature_dicts = featurize_tokens(tokens, verbose=True)
+    # 1. Extract pure word-level features from input tokens
+    feature_dicts = featurize_tokens(tokens)
 
-    # 2. Vectorize the features into the feature matrix format expected by the model
+    # 2. Vectorize features into the 8,161-column matrix expected by the model
     X = _VECTORIZER.transform(feature_dicts)
 
-    # 3. Pure Machine Learning Prediction
+    # 3. Predict language tags using the trained Decision Tree model
     predicted = _MODEL.predict(X)
 
-    tags = [str(tag) for tag in predicted]
-
-    if debug:
-        return tags, feature_dicts
-
-    return tags
+    # 4. Return predictions as a list of strings
+    return [str(tag) for tag in predicted]
 
 
 if __name__ == "__main__":
-    example_tokens = ["may", "ilang", "beses", "nako", "nag-eat", "ng", "dinner", "HAHAHA", "XD", ".", "D0", "you", "want", "magdessert", "instead", "later", "at", "2" "pm", "?"]
-
+    example_tokens = ["human", "ocean", "brain", "train", "number", "plumber", "dinosaur", "window", "co-op", "t-shirt", "x-ray", "e-mail", "ate", "noon", "raw", "may"]
+    #example_tokens = ["may", "ilang", "beses", "nako", "nag-eat", "ng", "dinner", "HAHAHAA", "XD", ".", "D0", "you", "want", "magdessert", "instead", "later", "at", "2" "pm", "?"]
+    
     print("Tokens:", example_tokens)
-
-    tags, features = tag_language(example_tokens, debug=True)
-
-    print("Tags:  ", tags)
-
-    print("\nDebug Information: Prototype")
-    for token, tag, feature in zip(example_tokens, tags, features):
+    tags = tag_language(example_tokens)
+    print("\nDebug Information: Pat Prototype")
+    for token, tag in zip(example_tokens, tags):
         print(f"{tag:<3}: {token:<15}")
